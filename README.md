@@ -1,0 +1,1 @@
+# kvadraticke_funkce
