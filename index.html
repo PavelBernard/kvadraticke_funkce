@@ -3,51 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulačka</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
     <link rel="manifest" href="manifest.json">
+    <script src="app.js"></script>
 </head>
 <body>
-    <h1>Jednoduchá Kalkulačka</h1>
-    <input type="number" id="num1" placeholder="Číslo 1">
-    <input type="number" id="num2" placeholder="Číslo 2">
-    <br>
-    <button onclick="add()">Sčítání</button>
-    <button onclick="subtract()">Odčítání</button>
-    <button onclick="multiply()">Násobení</button>
-    <button onclick="divide()">Dělení</button>
-
-    <div id="result"></div>
-
-    <script>
-        function add() {
-            let num1 = parseFloat(document.getElementById('num1').value);
-            let num2 = parseFloat(document.getElementById('num2').value);
-            document.getElementById('result').innerText = 'Výsledek: ' + (num1 + num2);
-        }
-
-        function subtract() {
-            let num1 = parseFloat(document.getElementById('num1').value);
-            let num2 = parseFloat(document.getElementById('num2').value);
-            document.getElementById('result').innerText = 'Výsledek: ' + (num1 - num2);
-        }
-
-        function multiply() {
-            let num1 = parseFloat(document.getElementById('num1').value);
-            let num2 = parseFloat(document.getElementById('num2').value);
-            document.getElementById('result').innerText = 'Výsledek: ' + (num1 * num2);
-        }
-
-        function divide() {
-            let num1 = parseFloat(document.getElementById('num1').value);
-            let num2 = parseFloat(document.getElementById('num2').value);
-            if (num2 === 0) {
-                document.getElementById('result').innerText = 'Nelze dělit nulou';
-            } else {
-                document.getElementById('result').innerText = 'Výsledek: ' + (num1 / num2);
-            }
-        }
-    </script>
+    <form>
+        <div>
+        <label for="a">a:</label>
+        <input type="number" id="a" name="a" />
+        <p>x^6</p>
+        </div>
+        <div>
+        <label for="b">b:</label>
+        <input type="number" id="b" name="b" />
+        <p>x</p>
+        </div>
+        <div>
+        <label for="c">c:</label>
+        <input type="number" id="c" name="c" />
+        </div>
+        <input type="button" id="vypocet" value="Vypocitej" onclick="calculate()">
+        <p>x1</p>
+        <label id="x1" name="x1">x1:</label>
+        <p>x2</p>
+        <label id="x2" name="x2"></label>
+    </form>
 </body>
 </html>
