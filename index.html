@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulačka</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <h1>Jednoduchá Kalkulačka</h1>
+    <input type="number" id="num1" placeholder="Číslo 1">
+    <input type="number" id="num2" placeholder="Číslo 2">
+    <br>
+    <button onclick="add()">Sčítání</button>
+    <button onclick="subtract()">Odčítání</button>
+    <button onclick="multiply()">Násobení</button>
+    <button onclick="divide()">Dělení</button>
+
+    <div id="result"></div>
+
+    <script>
+        function add() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = 'Výsledek: ' + (num1 + num2);
+        }
+
+        function subtract() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = 'Výsledek: ' + (num1 - num2);
+        }
+
+        function multiply() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = 'Výsledek: ' + (num1 * num2);
+        }
+
+        function divide() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            if (num2 === 0) {
+                document.getElementById('result').innerText = 'Nelze dělit nulou';
+            } else {
+                document.getElementById('result').innerText = 'Výsledek: ' + (num1 / num2);
+            }
+        }
+    </script>
+</body>
+</html>
